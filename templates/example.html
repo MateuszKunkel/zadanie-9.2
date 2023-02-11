@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <h1>
+        Prosty kalkulator walut
+    </h1>
+    <h2>
+        Na podstawie informacji pobieranych na bieżąco z NBP
+    </h2>
+    <form method="POST" action="/mypage/calculator">
+        <h3>
+            <label for="waluta">Wybierz walutę do przeliczenia:</label>
+            <select name="waluta" id="waluta">
+                <option value="USD">dolar amerykański</option>
+                <option value="AUD">dolar australijski</option>
+                <option value="CAD">dolar kanadyjski</option>
+                <option value="EUR">euro</option>
+                <option value="HUF">forint (Węgry)</option>
+                <option value="CHF">frank szwajcarski</option>
+                <option value="GBP">funt szterling</option>
+                <option value="JPY">jen (Japonia)</option>
+                <option value="CZK">korona czeska</option>
+                <option value="DKK">korona duńska</option>
+                <option value="NOK">korona norweska</option>
+                <option value="SEK">korona szwedzka</option>
+                <option value="XDR">SDR (MFW)</option>
+            </select>
+        <p>
+            <label for="ilosc">Podaj ile waluty zamierzasz kupić</label>
+            <input type="text" placeholder="0,00" name="ilosc">
+        <p>
+            <button type="submit">Przelicz</button>
+        </h3>
+    </form>
+
+</body>
+</html>
