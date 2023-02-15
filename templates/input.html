@@ -1,0 +1,23 @@
+{% extends "example.html" %}
+{% block content %}
+    <form method="POST" action="/">
+        <h3>
+            <label for="waluta">Wybierz walutę do przeliczenia:</label>
+            <select name="waluta" id="waluta">
+                {% for inp in options %}
+                <option value='{{inp['code']}}:{{inp['ask']}}'>{{inp['currency']}}</option>
+                {% endfor %}
+            </select>
+        <p>
+            <label for="ilosc">Podaj ile waluty zamierzasz kupić</label>
+            <input type="text" placeholder="0,00" name="ilosc">
+        <p>
+            <button type="submit">Przelicz</button>
+
+        </h3>
+    </form>
+    <h2>
+        {{last}}
+    </h2>
+
+{% endblock %}
